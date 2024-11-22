@@ -25,6 +25,7 @@ public class PharmaidAuthService {
   @Getter
   private String authToken;
 
+  /** constructor for PharmaidAuthService. */
   public PharmaidAuthService(
       RestTemplate restTemplate,
       @Value("${pharmaid.api.base-url}") String pharmaidBaseUrl,
