@@ -63,6 +63,39 @@ paths:
                 type: string
                 example: "Something went wrong"
 
+  /register/patient:
+    post:
+      operationId: registerPatient
+      summary: Register a new patient
+      description: Creates a new patient account.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterPatientRequest"
+      responses:
+        "201":
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Patient"
+        "400":
+          description: Patient already exists for a provided phone number
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Phone number already registered"
+        "500":
+          description: Unexpected error encountered while registering a user
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Something went wrong"
+
   /login:
     post:
       operationId: loginUser
@@ -95,6 +128,46 @@ paths:
               schema:
                 type: string
                 example: "Unexpected error encountered during login"
+
+  /search/patients:
+    post:
+      operationId: searchPatients
+      summary: Search for patients
+      description: Retrieve all patients matching criteria relating to patientId, full name, or phone number.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+                  description: Search query to match patients by `patientId`, full name, or phone number.
+                  example: "John Doe"
+      responses:
+        '200':
+          description: List of matching patients
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Patient"
+        '400':
+          description: Invalid search query
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Search query cannot be empty"
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Something went wrong during the search"
 
 components:
   schemas:

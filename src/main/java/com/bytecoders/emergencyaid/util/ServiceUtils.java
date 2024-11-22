@@ -14,11 +14,6 @@ import org.springframework.web.server.ResponseStatusException;
 @Component
 public class ServiceUtils {
 
-  // Regex validation
-  public static final String PHONE_NUMBER_REGEX = "^\\d{10}$";
-  public static final String FULL_NAME_REGEX = "\\s+";
-
-
   /**
    * Finds an entityId or throws ResponseStatusException if not found.
    *

@@ -1,6 +1,6 @@
 package com.bytecoders.emergencyaid.repository.model;
 
-import com.bytecoders.emergencyaid.util.ServiceUtils;
+import com.bytecoders.emergencyaid.util.QueryValidator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,7 +35,8 @@ public class Patient {
   private String lastName;
 
   @Column(name = "phone_number", nullable = false)
-  @Pattern(regexp = ServiceUtils.PHONE_NUMBER_REGEX, message = "Phone number must be 10 digits")
+  @Pattern(regexp = QueryValidator.PHONE_NUMBER_REGEX,
+      message = "Phone number must be 10 digits with dash separators")
   private String phoneNumber;
 
   @Column(name = "patient_pharma_id")

@@ -15,6 +15,10 @@ public interface PatientRepository extends JpaRepository<Patient, UUID> {
 
   Optional<Patient> findByPhoneNumber(String phoneNumber);
 
+  List<Patient> findByFirstNameIgnoreCase(String firstName);
+  
+  List<Patient> findByLastNameIgnoreCase(String lastName);
+
   // find by first and last name, ignore case
   @Query("""
       SELECT p
