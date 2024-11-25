@@ -36,6 +36,15 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       HttpServletRequest request, HttpServletResponse response, FilterChain chain)
       throws ServletException, IOException {
 
+    // Skip JWT validation for public endpoints
+    String requestUri = request.getRequestURI();
+    for (String endpoint : jwtUtils.getPublicEndpoints()) {
+      if (requestUri.equals(endpoint)) {
+        chain.doFilter(request, response);
+        return;
+      }
+    }
+
     final String jwt = extractJwtFromHeader(request);
     final String userId = extractUserIdFromJwt(jwt);
 

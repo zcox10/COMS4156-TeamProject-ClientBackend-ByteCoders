@@ -80,6 +80,15 @@ public class PatientService {
   }
 
   /**
+   * Retrieve patients from EmergencyAid.
+   *
+   * @return a list of patient's prescriptions
+   */
+  public List<Patient> getAllPatients() {
+    return patientRepository.findAll();
+  }
+
+  /**
    * Retrieve patient prescriptions from PharmaId.
    *
    * @param patientId the UUID of patient account
