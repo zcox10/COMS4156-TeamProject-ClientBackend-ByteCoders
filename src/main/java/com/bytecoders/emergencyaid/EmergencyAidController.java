@@ -129,6 +129,22 @@ public class EmergencyAidController {
   }
 
   /**
+   * Get all patients endpoint.
+   *
+   * @return list of all patients available in EmergencyAid
+   */
+  @GetMapping("/patients")
+  public ResponseEntity<?> getAllPatients() {
+    try {
+      List<Patient> patients = patientService.getAllPatients();
+      return new ResponseEntity<>(patients, HttpStatus.OK);
+    } catch (Exception e) {
+      return new ResponseEntity<>("Something went wrong while retrieving all patients",
+          HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
    * Get patient prescriptions via PharmaId.
    *
    * @param patientId The patient ID
