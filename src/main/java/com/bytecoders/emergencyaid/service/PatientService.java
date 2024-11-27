@@ -130,8 +130,7 @@ public class PatientService {
   public boolean requestPatientPrescriptionAccess(String pharmaId) {
     try {
       // create a VIEW access request
-      String url = String.format("%s/users/%s/requests?requesterId=%s", pharmaidBaseUrl, pharmaId,
-          clientPharmaId);
+      String url = String.format("%s/users/%s/requests", pharmaidBaseUrl, pharmaId);
       log.debug("Constructed URL: {}", url);
 
       // construct HttpEntity with headers and body
