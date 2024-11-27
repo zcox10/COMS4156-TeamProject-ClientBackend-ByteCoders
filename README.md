@@ -60,5 +60,5 @@ GET {{base_url}}/patients/search?q=Patient_First_Name
 - [First Iteration Video Demo](https://www.dropbox.com/scl/fi/z5lcima7kjy1jpw5xwheb/Iteration-1-functionality-demo.mov?rlkey=ld4xxx19yk5ug3xetvunyk6yu&st=g5jnxxl7&dl=0)
 - [First Iteration Postman Collection Logs](https://www.dropbox.com/scl/fi/f7o3rd45sq4zsiuqucnkp/ByteCoders.postman_collection.json?rlkey=gdcqv823snw3oawx6i80rbiyb&st=pjxn6cmh&dl=0)
 - [JIRA Board](https://bytecoders-4156.atlassian.net/jira/software/projects/BYT/boards/1)
--  [Postman collection](https://www.dropbox.com/scl/fi/rqvu6dfjy41hxam8v33vh/final_client_backend_api_test.postman_collection.json?rlkey=quikh7evv5nbvcz8ap7pf5b34&st=be7d7sql&dl=0)
--- [Frontend repo](https://github.com/AlexLoyko/COMS4156-TeamProjectClient-ByteCoders/tree/main)
+- [Postman collection](https://www.dropbox.com/scl/fi/rqvu6dfjy41hxam8v33vh/final_client_backend_api_test.postman_collection.json?rlkey=quikh7evv5nbvcz8ap7pf5b34&st=be7d7sql&dl=0)
+- [Frontend repo](https://github.com/AlexLoyko/COMS4156-TeamProjectClient-ByteCoders/tree/main)
