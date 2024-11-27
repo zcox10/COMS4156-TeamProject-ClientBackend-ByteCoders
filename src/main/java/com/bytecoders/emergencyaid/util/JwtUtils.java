@@ -49,7 +49,13 @@ public class JwtUtils {
    * @return the list of public endpoints
    */
   public String[] getPublicEndpoints() {
-    return new String[]{"/hello", "/login", "/register", "/patients/new"};
+    return new String[]{"/hello",
+        "/login",
+        "/register",
+        "/patients/new",
+        "/emergency-aid-docs",
+        "/emergency-aid-docs-ui.html",
+        "/swagger-ui/index.html"};
   }
 
   private Claims getClaims(String token) {
