@@ -236,9 +236,7 @@ public class PatientServiceTests {
     when(pharmaidAuthService.getHeaders()).thenReturn(headers);
 
     // Construct expected URL and request body
-    String url =
-        String.format("%s/users/%s/requests?requesterId=%s", pharmaidBaseUrl, MOCK_PHARMAID,
-            clientPharmaId);
+    String url = String.format("%s/users/%s/requests", pharmaidBaseUrl, MOCK_PHARMAID);
 
     // Mock RestTemplate to return a successful response
     when(restTemplate.postForEntity(eq(url), any(HttpEntity.class), eq(Object.class))).thenReturn(
@@ -258,9 +256,7 @@ public class PatientServiceTests {
     when(pharmaidAuthService.getHeaders()).thenReturn(headers);
 
     // create ShareRequest request
-    String url =
-        String.format("%s/users/%s/requests?requesterId=%s", pharmaidBaseUrl, MOCK_PHARMAID,
-            clientPharmaId);
+    String url = String.format("%s/users/%s/requests", pharmaidBaseUrl, MOCK_PHARMAID);
 
     // mock a non-CREATED HttpStatus
     when(restTemplate.postForEntity(eq(url), any(HttpEntity.class), eq(Object.class))).thenReturn(
@@ -277,9 +273,7 @@ public class PatientServiceTests {
     when(pharmaidAuthService.getHeaders()).thenReturn(headers);
 
     // create ShareRequest request
-    String url =
-        String.format("%s/users/%s/requests?requesterId=%s", pharmaidBaseUrl, MOCK_PHARMAID,
-            clientPharmaId);
+    String url = String.format("%s/users/%s/requests", pharmaidBaseUrl, MOCK_PHARMAID);
 
     // mock a RuntimeException
     when(restTemplate.postForEntity(eq(url), any(HttpEntity.class), eq(Object.class))).thenThrow(
@@ -304,8 +298,7 @@ public class PatientServiceTests {
     final String getPrescriptionsEndpoint =
         String.format("%s/users/%s/prescriptions", pharmaidBaseUrl, MOCK_PHARMAID);
     final String shareRequestEndpoint =
-        String.format("%s/users/%s/requests?requesterId=%s", pharmaidBaseUrl, MOCK_PHARMAID,
-            clientPharmaId);
+        String.format("%s/users/%s/requests", pharmaidBaseUrl, MOCK_PHARMAID);
 
     patient.setPharmaId(MOCK_PHARMAID);
     when(patientService.getPatient(patient.getId())).thenReturn(patient);
