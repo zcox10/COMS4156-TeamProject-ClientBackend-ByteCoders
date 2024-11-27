@@ -39,6 +39,16 @@ public class EmergencyAidController {
   private PatientService patientService;
 
   /**
+   * Basic warmup endpoint for App Engine.
+   *
+   * @return A String
+   */
+  @GetMapping("/_ah/warmup")
+  public String warmup() {
+    return index();
+  }
+  
+  /**
    * Basic hello endpoint for testing.
    *
    * @return A String
